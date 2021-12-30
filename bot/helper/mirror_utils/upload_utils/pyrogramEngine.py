@@ -73,7 +73,7 @@ class TgUploader:
             os.rename(up_path, new_path)
             up_path = new_path
         else:
-            cap_mono = f"<code>{filee}</code>"
+            cap_mono = f"{filee}"
         notMedia = False
         thumb = self.__thumb
         try:
@@ -104,7 +104,6 @@ class TgUploader:
                                                               duration=duration,
                                                               width=width,
                                                               height=height,
-                                                              thumb=thumb,
                                                               supports_streaming=True,
                                                               disable_notification=True,
                                                               progress=self.__upload_progress)
@@ -117,7 +116,6 @@ class TgUploader:
                                                               duration=duration,
                                                               performer=artist,
                                                               title=title,
-                                                              thumb=thumb,
                                                               disable_notification=True,
                                                               progress=self.__upload_progress)
                 elif filee.upper().endswith(IMAGE_SUFFIXES):
@@ -138,7 +136,6 @@ class TgUploader:
                         return
                 self.__sent_msg = self.__sent_msg.reply_document(document=up_path,
                                                              quote=True,
-                                                             thumb=thumb,
                                                              caption=cap_mono,
                                                              parse_mode="html",
                                                              disable_notification=True,
