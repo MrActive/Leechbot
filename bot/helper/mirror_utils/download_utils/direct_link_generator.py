@@ -52,6 +52,8 @@ def direct_link_generator(link: str):
         return fembed(link)
     elif 'fembed.com' in link:
         return fembed(link)
+elif 'fembed-hd.com' in link:
+        return fembed(link)
     elif 'femax20.com' in link:
         return fembed(link)
     elif 'fcdn.stream' in link:
